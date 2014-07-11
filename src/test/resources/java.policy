@@ -1,0 +1,72 @@
+// Model Tools.
+// Copyright (C) 2013 Pal Hargitai (pal@lunarray.org)
+// 
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as
+// published by the Free Software Foundation, either version 3 of the
+// License, or (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+grant { 
+	permission java.net.SocketPermission "localhost:1024-", "listen";
+
+	permission java.util.PropertyPermission "java.version", "read";
+	permission java.util.PropertyPermission "java.vendor", "read";
+	permission java.util.PropertyPermission "java.vendor.url", "read";
+	permission java.util.PropertyPermission "java.class.version", "read";
+	permission java.util.PropertyPermission "os.name", "read";
+	permission java.util.PropertyPermission "os.version", "read";
+	permission java.util.PropertyPermission "os.arch", "read";
+	permission java.util.PropertyPermission "file.separator", "read";
+	permission java.util.PropertyPermission "path.separator", "read";
+	permission java.util.PropertyPermission "line.separator", "read";
+
+	permission java.util.PropertyPermission "java.specification.version", "read";
+	permission java.util.PropertyPermission "java.specification.vendor", "read";
+	permission java.util.PropertyPermission "java.specification.name", "read";
+
+	permission java.util.PropertyPermission "java.vm.specification.version", "read";
+	permission java.util.PropertyPermission "java.vm.specification.vendor", "read";
+	permission java.util.PropertyPermission "java.vm.specification.name", "read";
+	permission java.util.PropertyPermission "java.vm.version", "read";
+	permission java.util.PropertyPermission "java.vm.vendor", "read";
+	permission java.util.PropertyPermission "java.vm.name", "read";
+
+	// Surefire
+	permission java.io.FilePermission "${java.io.tmpdir}/-", "read";
+	permission java.net.SocketPermission "localhost", "connect,resolve";
+	permission java.io.FilePermission "target/surefire/*", "read";
+	permission java.util.PropertyPermission "user.dir", "write";
+	permission java.util.PropertyPermission "localRepository", "write";
+	permission java.util.PropertyPermission "basedir", "write";
+	permission java.util.PropertyPermission "*", "write, read";
+	permission java.util.PropertyPermission "java.class.path", "read, write";
+	permission java.io.FilePermission "${user.home}/.m2/repository/org/apache/maven/surefire/surefire-junit4/2.8.1/surefire-junit4-2.8.1.jar", "read";
+	permission java.io.FilePermission "${user.home}/.m2/repository/org/apache/maven/surefire/surefire-junit4/2.9/surefire-junit4-2.9.jar", "read";
+	permission java.io.FilePermission "${user.home}/.m2/repository/org/apache/maven/surefire/surefire-api/2.8.1/surefire-api-2.8.1.jar", "read";
+	permission java.io.FilePermission "${user.home}/.m2/repository/org/apache/maven/surefire/surefire-api/2.9/surefire-api-2.9.jar", "read";
+	permission java.lang.RuntimePermission "createClassLoader";
+	permission java.lang.RuntimePermission "setContextClassLoader";
+ 	permission java.lang.RuntimePermission "setIO";
+	permission java.io.FilePermission "${user.dir}/target/test-classes", "read";
+	permission java.io.FilePermission "${user.dir}/target/test-classes/-", "read";
+	permission java.lang.RuntimePermission "accessDeclaredMembers";
+	permission java.io.FilePermission "target/surefire-reports", "read, write";
+	permission java.io.FilePermission "target/surefire-reports/*", "read, write";
+	// Lunar Ray Logging
+	permission java.io.FilePermission "bootstrap.log", "read, write";
+	permission javax.management.MBeanServerPermission "createMBeanServer";
+	permission java.io.FilePermission "${java.home}/../lib/tools.jar", "read";
+	permission java.io.FilePermission "${user.dir}/target/classes", "read";
+	permission java.io.FilePermission "/-", "read";
+	permission java.lang.RuntimePermission "accessClassInPackage.sun.misc";
+	permission java.lang.RuntimePermission "accessClassInPackage.sun.misc.*";
+	// Lunar Ray Model
+	permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+};
